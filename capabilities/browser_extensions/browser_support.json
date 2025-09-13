@@ -1,0 +1,55 @@
+{
+  "browsers": {
+    "mozilla_firefox": {
+      "name": "Mozilla Firefox",
+      "isSupported": true,
+      "executableName": {
+        "mac": "Firefox.app"
+      },
+      "processName": {
+        "mac": "firefox"
+      },
+      "nativeManifest": {
+        "extensionId": "firefox-extension@digitalcarrot.app",
+        "nativeHostName": "com.digitalcarrot.DigitalCarrot.firefox",
+        "location": {
+          "mac": "~/Library/Application Support/Mozilla/NativeMessagingHosts"
+        }
+      },
+      "troubleshootingLinks": {
+        "installExtension": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/",
+        "fixIncognito": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/incognito/",
+        "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/all_pages/"
+      },
+      "linkCommands": {
+        "mac": ["open", "-a", "Firefox", "<URL>"]
+      }
+    },
+    "google_chrome": {
+      "name": "Google Chrome",
+      "isSupported": false,
+      "executableName": {
+        "mac": "Google Chrome.app"
+      },
+      "processName": {
+        "mac": "google chrome"
+      },
+      "linkCommands": {
+        "mac": ["open", "-a", "Google Chrome", "<URL>"]
+      }
+    },
+    "apple_safari": {
+      "name": "Safari",
+      "isSupported": false,
+      "executableName": {
+        "mac": "Safari.app"
+      },
+      "processName": {
+        "mac": "safari"
+      },
+      "linkCommands": {
+        "mac": ["open", "-a", "Safari", "<URL>"]
+      }
+    }
+  }
+}

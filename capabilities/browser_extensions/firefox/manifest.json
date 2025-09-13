@@ -6,20 +6,17 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "firefox-extension@digitalcarrot.app",
-      "strict_min_version": "109.0"
+      "strict_min_version": "113.0",
+      "data_collection_permissions": {
+        "required": ["browsingActivity"]
+      }
     }
   },
   "icons": {
     "48": "assets/icon-48.png",
     "96": "assets/icon-96.png"
   },
-  "permissions": [
-    "storage",
-    "webNavigation",
-    "nativeMessaging",
-    "declarativeNetRequest",
-    "declarativeNetRequestFeedback"
-  ],
+  "permissions": ["nativeMessaging", "declarativeNetRequest"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "scripts": ["background.js"]
