@@ -1,7 +1,0 @@
-{
-  "name": "com.digitalcarrot.DigitalCarrot.firefox",
-  "description": "Digital Carrot Website Blocker Native Host",
-  "path": "/Users/david/code/digital-carrot-app/ui/go_source/firefox.sh",
-  "type": "stdio",
-  "allowed_extensions": ["firefox-extension@digitalcarrot.app"]
-}

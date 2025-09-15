@@ -12,6 +12,7 @@
       "nativeManifest": {
         "extensionId": "firefox-extension@digitalcarrot.app",
         "nativeHostName": "com.digitalcarrot.DigitalCarrot.firefox",
+        "allowedOriginsKey": "allowed_extensions",
         "location": {
           "mac": "~/Library/Application Support/Mozilla/NativeMessagingHosts"
         }
@@ -27,7 +28,15 @@
     },
     "google_chrome": {
       "name": "Google Chrome",
-      "isSupported": false,
+      "isSupported": true,
+      "nativeManifest": {
+        "extensionId": "chrome-extension://jgmpkomnkdehpgjddbionlgameoihgln/",
+        "nativeHostName": "com.digitalcarrot.digitalcarrot.chrome",
+        "location": {
+          "mac": "~/Library/Application Support/Google/Chrome/NativeMessagingHosts/"
+        },
+        "allowedOriginsKey": "allowed_origins"
+      },
       "executableName": {
         "mac": "Google Chrome.app"
       },
@@ -36,6 +45,11 @@
       },
       "linkCommands": {
         "mac": ["open", "-a", "Google Chrome", "<URL>"]
+      },
+      "troubleshootingLinks": {
+        "installExtension": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/",
+        "fixIncognito": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/incognito/",
+        "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/all_pages/"
       }
     },
     "apple_safari": {
