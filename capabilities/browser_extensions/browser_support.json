@@ -47,9 +47,9 @@
         "mac": ["open", "-a", "Google Chrome", "<URL>"]
       },
       "troubleshootingLinks": {
-        "installExtension": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/",
-        "fixIncognito": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/incognito/",
-        "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/all_pages/"
+        "installExtension": "https://www.digitalcarrot.app/docs/browser_extensions/google_chrome/",
+        "fixIncognito": "https://www.digitalcarrot.app/docs/browser_extensions/google_chrome/incognito/",
+        "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/google_chrome/all_pages/"
       }
     },
     "apple_safari": {
