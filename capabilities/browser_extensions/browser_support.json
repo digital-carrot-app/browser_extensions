@@ -4,17 +4,25 @@
       "name": "Mozilla Firefox",
       "isSupported": true,
       "executableName": {
-        "mac": "Firefox.app"
+        "mac": "Firefox.app",
+        "windows": "firefox.exe"
       },
       "processName": {
-        "mac": "firefox"
+        "mac": "firefox",
+        "windows": "firefox.exe"
+      },
+      "installDirectories": {
+        "windows": [
+          "Mozilla Firefox"
+        ]
       },
       "nativeManifest": {
         "extensionId": "firefox-extension@digitalcarrot.app",
         "nativeHostName": "com.digitalcarrot.DigitalCarrot.firefox",
         "allowedOriginsKey": "allowed_extensions",
         "location": {
-          "mac": "~/Library/Application Support/Mozilla/NativeMessagingHosts"
+          "mac": "~/Library/Application Support/Mozilla/NativeMessagingHosts",
+          "windows": "SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.digitalcarrot.DigitalCarrot.firefox"
         }
       },
       "troubleshootingLinks": {
@@ -23,7 +31,8 @@
         "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/all_pages/"
       },
       "linkCommands": {
-        "mac": ["open", "-a", "Firefox", "<URL>"]
+        "mac": ["open", "-a", "Firefox", "<URL>"],
+        "windows": ["<INSTALL_DIR>\\firefox.exe", "<URL>"]
       }
     },
     "google_chrome": {
@@ -33,18 +42,27 @@
         "extensionId": "chrome-extension://jgmpkomnkdehpgjddbionlgameoihgln/",
         "nativeHostName": "com.digitalcarrot.digitalcarrot.chrome",
         "location": {
-          "mac": "~/Library/Application Support/Google/Chrome/NativeMessagingHosts/"
+          "mac": "~/Library/Application Support/Google/Chrome/NativeMessagingHosts/",
+          "windows": "SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.digitalcarrot.digitalcarrot.chrome"
         },
         "allowedOriginsKey": "allowed_origins"
       },
+      "installDirectories": {
+        "windows": [
+          "Google\\Chrome\\Application"
+        ]
+      },
       "executableName": {
-        "mac": "Google Chrome.app"
+        "mac": "Google Chrome.app",
+        "windows": "chrome.exe"
       },
       "processName": {
-        "mac": "google chrome"
+        "mac": "google chrome",
+        "windows": "chrome.exe"
       },
       "linkCommands": {
-        "mac": ["open", "-a", "Google Chrome", "<URL>"]
+        "mac": ["open", "-a", "Google Chrome", "<URL>"],
+        "windows": ["<INSTALL_DIR>\\chrome.exe", "<URL>"]
       },
       "troubleshootingLinks": {
         "installExtension": "https://www.digitalcarrot.app/docs/browser_extensions/google_chrome/",
@@ -63,6 +81,21 @@
       },
       "linkCommands": {
         "mac": ["open", "-a", "Safari", "<URL>"]
+      }
+    },
+    "microsoft_edge": {
+      "isSupported": false,
+      "name": "Microsoft Edge", 
+      "executableName": {
+        "windows": "msedge.exe"
+      },
+      "processName": {
+        "windows": "msedge.exe"
+      },
+      "installDirectories": {
+        "windows": [
+          "Microsoft\\Edge\\Application"
+        ]
       }
     }
   }
