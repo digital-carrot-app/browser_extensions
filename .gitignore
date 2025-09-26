@@ -1,4 +1,4 @@
 # This is used for AI generated code that is meant for learning and reference, but
 # should not be committed.
 **/ai_reference/**
-capabilities/browser_extensions/build/**
+/build/**
