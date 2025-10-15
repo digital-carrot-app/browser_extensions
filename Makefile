@@ -12,3 +12,9 @@ firefox: build
 	mkdir build/firefox/
 	cp -R firefox/* build/firefox
 	cp -R common/* build/firefox
+
+edge: build
+	rm -rf build/edge/
+	mkdir build/edge/
+	cp -R edge/* build/edge
+	cp -R common/* build/edge

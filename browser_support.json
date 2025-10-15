@@ -31,8 +31,16 @@
         "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/all_pages/"
       },
       "linkCommands": {
-        "mac": ["open", "-a", "Firefox", "<URL>"],
-        "windows": ["<INSTALL_DIR>\\firefox.exe", "<URL>"]
+        "mac": [
+          "open",
+          "-a",
+          "Firefox",
+          "<URL>"
+        ],
+        "windows": [
+          "<INSTALL_DIR>\\firefox.exe",
+          "<URL>"
+        ]
       }
     },
     "google_chrome": {
@@ -61,8 +69,16 @@
         "windows": "chrome.exe"
       },
       "linkCommands": {
-        "mac": ["open", "-a", "Google Chrome", "<URL>"],
-        "windows": ["<INSTALL_DIR>\\chrome.exe", "<URL>"]
+        "mac": [
+          "open",
+          "-a",
+          "Google Chrome",
+          "<URL>"
+        ],
+        "windows": [
+          "<INSTALL_DIR>\\chrome.exe",
+          "<URL>"
+        ]
       },
       "troubleshootingLinks": {
         "installExtension": "https://www.digitalcarrot.app/docs/browser_extensions/google_chrome/",
@@ -80,12 +96,17 @@
         "mac": "safari"
       },
       "linkCommands": {
-        "mac": ["open", "-a", "Safari", "<URL>"]
+        "mac": [
+          "open",
+          "-a",
+          "Safari",
+          "<URL>"
+        ]
       }
     },
     "microsoft_edge": {
-      "isSupported": false,
-      "name": "Microsoft Edge", 
+      "isSupported": true,
+      "name": "Microsoft Edge",
       "executableName": {
         "windows": "msedge.exe"
       },
@@ -96,7 +117,33 @@
         "windows": [
           "Microsoft\\Edge\\Application"
         ]
+      },
+      "nativeManifest": {
+        "extensionId": "chrome-extension://jgmpkomnkdehpgjddbionlgameoihgln/",
+        "nativeHostName": "com.digitalcarrot.digitalcarrot.edge",
+        "location": {
+          "mac": "~/Library/Application Support/Microsoft Edge/NativeMessagingHosts/com.my_company.my_app.json",
+          "windows": "\\SOFTWARE\\Microsoft\\Edge\\NativeMessagingHosts\\com.digitalcarrot.digitalcarrot.edge"
+        },
+        "allowedOriginsKey": "allowed_origins"
+      },
+      "troubleshootingLinks": {
+        "installExtension": "https://www.digitalcarrot.app/docs/browser_extensions/microsoft_edge/",
+        "fixIncognito": "https://www.digitalcarrot.app/docs/browser_extensions/microsoft_edge/incognito/",
+        "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/microsoft_edge/all_pages/"
       }
+    },
+    "linkCommands": {
+      "mac": [
+        "open",
+        "-a",
+        "Microsoft Edge",
+        "<URL>"
+      ],
+      "windows": [
+        "<INSTALL_DIR>\\msedge.exe",
+        "<URL>"
+      ]
     }
   }
 }

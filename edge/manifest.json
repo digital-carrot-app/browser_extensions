@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Digital Carrot",
+  "version": "1.0",
+  "description": "Digital Carrot extension for blocking websites and setting website usage goals.",
+  "icons": {
+    "48": "assets/icon-48.png",
+    "96": "assets/icon-96.png"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1slHkm736XxN4gymyyINnDI+uSaBcScphjdHA0LPPfVLfkT+gNV9jk4RFXGI8SWjgK7flO6KexWql0W45YUIy+iJ5R9stXJ2tEbsM+QcDcBq7uDa3cG90lAGc1xLnLjKxoPUQkb4fgHaaJbFyRr7XK7f4cTT8CkCwE02oYE4ksoA+xwAXcdLmsq3FrW4D6mTv+DnDobLkfQJ241Z47KkS9dziINqhBNrT6mOPSd4apkL8M8ZRMXPUgRzLoFZctjJJP3z/X5ok2Fz3ykg3ENOtFzisOYcmnWj0JdmRK8fqiEWGP53SfWHDWTk+0zySiic8Ll8oVPm0DZQG8OMdqs6vQIDAQAB",
+  "permissions": ["nativeMessaging", "declarativeNetRequest"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html",
+        "assets/padlock.svg",
+        "assets/logo.svg",
+        "blocked.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
