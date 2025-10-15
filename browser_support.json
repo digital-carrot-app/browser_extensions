@@ -12,9 +12,7 @@
         "windows": "firefox.exe"
       },
       "installDirectories": {
-        "windows": [
-          "Mozilla Firefox"
-        ]
+        "windows": ["Mozilla Firefox"]
       },
       "nativeManifest": {
         "extensionId": "firefox-extension@digitalcarrot.app",
@@ -31,16 +29,8 @@
         "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/firefox/all_pages/"
       },
       "linkCommands": {
-        "mac": [
-          "open",
-          "-a",
-          "Firefox",
-          "<URL>"
-        ],
-        "windows": [
-          "<INSTALL_DIR>\\firefox.exe",
-          "<URL>"
-        ]
+        "mac": ["open", "-a", "Firefox", "<URL>"],
+        "windows": ["<INSTALL_DIR>\\firefox.exe", "<URL>"]
       }
     },
     "google_chrome": {
@@ -56,9 +46,7 @@
         "allowedOriginsKey": "allowed_origins"
       },
       "installDirectories": {
-        "windows": [
-          "Google\\Chrome\\Application"
-        ]
+        "windows": ["Google\\Chrome\\Application"]
       },
       "executableName": {
         "mac": "Google Chrome.app",
@@ -69,16 +57,8 @@
         "windows": "chrome.exe"
       },
       "linkCommands": {
-        "mac": [
-          "open",
-          "-a",
-          "Google Chrome",
-          "<URL>"
-        ],
-        "windows": [
-          "<INSTALL_DIR>\\chrome.exe",
-          "<URL>"
-        ]
+        "mac": ["open", "-a", "Google Chrome", "<URL>"],
+        "windows": ["<INSTALL_DIR>\\chrome.exe", "<URL>"]
       },
       "troubleshootingLinks": {
         "installExtension": "https://www.digitalcarrot.app/docs/browser_extensions/google_chrome/",
@@ -96,27 +76,22 @@
         "mac": "safari"
       },
       "linkCommands": {
-        "mac": [
-          "open",
-          "-a",
-          "Safari",
-          "<URL>"
-        ]
+        "mac": ["open", "-a", "Safari", "<URL>"]
       }
     },
     "microsoft_edge": {
       "isSupported": true,
       "name": "Microsoft Edge",
       "executableName": {
-        "windows": "msedge.exe"
+        "windows": "msedge.exe",
+        "mac": "Microsoft Edge.app"
       },
       "processName": {
-        "windows": "msedge.exe"
+        "windows": "msedge.exe",
+        "mac": "microsoft edge"
       },
       "installDirectories": {
-        "windows": [
-          "Microsoft\\Edge\\Application"
-        ]
+        "windows": ["Microsoft\\Edge\\Application"]
       },
       "nativeManifest": {
         "extensionId": "chrome-extension://jgmpkomnkdehpgjddbionlgameoihgln/",
@@ -133,16 +108,8 @@
         "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/microsoft_edge/all_pages/"
       },
       "linkCommands": {
-        "mac": [
-          "open",
-          "-a",
-          "Microsoft Edge",
-          "<URL>"
-        ],
-        "windows": [
-          "<INSTALL_DIR>\\msedge.exe",
-          "<URL>"
-        ]
+        "mac": ["open", "-a", "Microsoft Edge", "<URL>"],
+        "windows": ["<INSTALL_DIR>\\msedge.exe", "<URL>"]
       }
     }
   }
