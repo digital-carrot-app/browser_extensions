@@ -131,19 +131,19 @@
         "installExtension": "https://www.digitalcarrot.app/docs/browser_extensions/microsoft_edge/",
         "fixIncognito": "https://www.digitalcarrot.app/docs/browser_extensions/microsoft_edge/incognito/",
         "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/microsoft_edge/all_pages/"
+      },
+      "linkCommands": {
+        "mac": [
+          "open",
+          "-a",
+          "Microsoft Edge",
+          "<URL>"
+        ],
+        "windows": [
+          "<INSTALL_DIR>\\msedge.exe",
+          "<URL>"
+        ]
       }
-    },
-    "linkCommands": {
-      "mac": [
-        "open",
-        "-a",
-        "Microsoft Edge",
-        "<URL>"
-      ],
-      "windows": [
-        "<INSTALL_DIR>\\msedge.exe",
-        "<URL>"
-      ]
     }
   }
 }
