@@ -97,7 +97,7 @@
         "extensionId": "chrome-extension://dmhfefkojpanbpldgfkfaioaocdklbdd/",
         "nativeHostName": "com.digitalcarrot.digitalcarrot.edge",
         "location": {
-          "mac": "~/Library/Application Support/Microsoft Edge/NativeMessagingHosts/com.digitalcarrot.digitalcarrot.edge",
+          "mac": "~/Library/Application Support/Microsoft Edge/NativeMessagingHosts",
           "windows": "SOFTWARE\\Microsoft\\Edge\\NativeMessagingHosts\\com.digitalcarrot.digitalcarrot.edge"
         },
         "allowedOriginsKey": "allowed_origins"
