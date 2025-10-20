@@ -94,7 +94,7 @@
         "windows": ["Microsoft\\Edge\\Application"]
       },
       "nativeManifest": {
-        "extensionId": "chrome-extension://jgmpkomnkdehpgjddbionlgameoihgln/",
+        "extensionId": "chrome-extension://dmhfefkojpanbpldgfkfaioaocdklbdd/",
         "nativeHostName": "com.digitalcarrot.digitalcarrot.edge",
         "location": {
           "mac": "~/Library/Application Support/Microsoft Edge/NativeMessagingHosts/com.my_company.my_app.json",
