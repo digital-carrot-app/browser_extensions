@@ -104,14 +104,6 @@ function handleDisconnect() {
 export function init(apiObj, cfg) {
   NATIVE_HOST_NAME = cfg.nativeHostName;
   browserApi = apiObj;
-  browserApi.extension.isAllowedIncognitoAccess().then((isAllowed) => {
-    if (!isAllowed) {
-      browserApi.tabs.create({
-        active: true,
-        url: cfg.incognitoDocs,
-      });
-    }
-  });
 
   setInterval(async () => {
     reportStatus();
