@@ -43,6 +43,30 @@ function updateBlockList(message) {
             resourceTypes: ["main_frame"],
           },
         });
+        toAdd.push({
+          id: Number(website.id) + 50000,
+          priority: 1,
+          action: {
+            type: "block",
+          },
+          condition: {
+            urlFilter: website.urlFilter,
+            // resourceTypes: [
+            //   "main_frame",
+            //   "sub_frame",
+            //   "stylesheet",
+            //   "script",
+            //   "image",
+            //   "font",
+            //   "object",
+            //   "xmlhttprequest",
+            //   "ping",
+            //   "media",
+            //   "websocket",
+            //   "other",
+            // ],
+          },
+        });
       }
     }
 
