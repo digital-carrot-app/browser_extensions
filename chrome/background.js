@@ -1,8 +1,21 @@
 import { init } from "./common.js";
 
-function start() {
+async function detectBrowser() {
+  if (navigator.brave && (await navigator.brave.isBrave())) {
+    return "brave";
+  }
+  const ua = navigator.userAgent;
+  if (ua.includes("OPR/")) return "opera";
+  if (ua.includes("Vivaldi/")) return "vivaldi";
+  return "google_chrome";
+}
+
+async function start() {
+  const browser = await detectBrowser();
+  console.log(browser);
   init(chrome, {
     nativeHostName: "com.digitalcarrot.digitalcarrot.chrome",
+    browser: browser,
   });
 }
 

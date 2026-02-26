@@ -7,6 +7,7 @@ var updateKey = "";
 var hasPagePerms = true;
 var browserApi;
 var NATIVE_HOST_NAME;
+var detectedBrowser = "";
 
 // Handle messages from the native host
 function handleNativeMessage(message) {
@@ -128,6 +129,7 @@ function handleDisconnect() {
 export function init(apiObj, cfg) {
   NATIVE_HOST_NAME = cfg.nativeHostName;
   browserApi = apiObj;
+  detectedBrowser = cfg.browser || "";
 
   setInterval(async () => {
     reportStatus();
@@ -171,7 +173,6 @@ async function reportStatus() {
   //   unless the user submits a customer support ticket.
 
   var status = {
-    // browser: "firefox",
     allowedInIncognito: true,
     allowedOnAllSites: true,
     activeTabs: [],
@@ -222,6 +223,6 @@ async function reportStatus() {
   }
 
   if (port != null) {
-    port.postMessage({ status: status });
+    port.postMessage({ status: status, browserId: detectedBrowser });
   }
 }
