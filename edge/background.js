@@ -17,9 +17,6 @@ chrome.runtime.onInstalled.addListener((object) => {
       }
     });
   }
-  start();
 });
 
-chrome.runtime.onStartup.addListener(() => {
-  start();
-});
+start();
