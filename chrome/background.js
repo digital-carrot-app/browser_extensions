@@ -19,6 +19,10 @@ async function start() {
   });
 }
 
+chrome.runtime.onStartup.addListener(() => {
+  start();
+});
+
 chrome.runtime.onInstalled.addListener((object) => {
   if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
     chrome.extension.isAllowedIncognitoAccess().then((isAllowed) => {

@@ -8,6 +8,9 @@ var hasPagePerms = true;
 var browserApi;
 var NATIVE_HOST_NAME;
 var detectedBrowser = "";
+var statusInterval = null;
+var alarmListenerRegistered = false;
+var isRunning = false;
 
 // Handle messages from the native host
 function handleNativeMessage(message) {
@@ -127,14 +130,32 @@ function handleDisconnect() {
 }
 
 export function init(apiObj, cfg) {
+  if (isRunning) return;
+  isRunning = true;
   NATIVE_HOST_NAME = cfg.nativeHostName;
   browserApi = apiObj;
   detectedBrowser = cfg.browser || "";
+  connectToNativeHost();
 
-  setInterval(async () => {
+  // setInterval handles the normal 5-second cadence. The native messaging port
+  // keeps the service worker alive while the native host is connected.
+  if (statusInterval != null) clearInterval(statusInterval);
+  statusInterval = setInterval(() => {
     reportStatus();
   }, 5000);
-  connectToNativeHost();
+
+  // Alarm is a fallback to wake the worker if it gets killed while the native
+  // host is down (Chrome enforces a minimum of 1 minute for alarms).
+  browserApi.alarms.create("reportStatus", { periodInMinutes: 1 });
+  if (!alarmListenerRegistered) {
+    alarmListenerRegistered = true;
+    browserApi.alarms.onAlarm.addListener((alarm) => {
+      if (alarm.name === "reportStatus") {
+        reportStatus();
+        connectToNativeHost();
+      }
+    });
+  }
 }
 
 async function reportStatus() {
