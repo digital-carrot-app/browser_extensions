@@ -12,3 +12,9 @@ browser.extension.isAllowedIncognitoAccess().then((isAllowed) => {
 init(browser, {
   nativeHostName: "com.digitalcarrot.DigitalCarrot.firefox",
 });
+
+browser.runtime.onStartup.addListener(() => {
+  init(browser, {
+    nativeHostName: "com.digitalcarrot.DigitalCarrot.firefox",
+  });
+});
