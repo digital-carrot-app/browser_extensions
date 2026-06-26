@@ -18,3 +18,9 @@ edge: build
 	mkdir build/edge/
 	cp -R edge/* build/edge
 	cp -R common/* build/edge
+
+safari: build
+	rm -rf build/safari/
+	mkdir build/safari/
+	cp -R safari/* build/safari
+	cp -R common/* build/safari

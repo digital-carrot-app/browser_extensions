@@ -11,6 +11,10 @@ var detectedBrowser = "";
 var statusInterval = null;
 var alarmListenerRegistered = false;
 var isRunning = false;
+// Safari does not support a long-lived connectNative() port: native messaging
+// is request/response only via sendNativeMessage(). When this is true we skip
+// the port entirely and round-trip each status update instead.
+var useSendNativeMessage = false;
 
 // Handle messages from the native host
 function handleNativeMessage(message) {
@@ -83,6 +87,29 @@ function updateBlockList(message) {
   });
 }
 
+// Send a payload to the native host using whichever transport this browser
+// supports, and route any reply through the same handler the port uses.
+function sendToHost(payload) {
+  if (useSendNativeMessage) {
+    // Safari: one-shot request/response. The handler (SafariWebExtensionHandler)
+    // returns a serialized DaemonRequest, which looks identical to a port
+    // message, so handleNativeMessage can process it unchanged.
+    browserApi.runtime
+      .sendNativeMessage(NATIVE_HOST_NAME, payload)
+      .then((response) => {
+        if (response) handleNativeMessage(response);
+      })
+      .catch((error) => {
+        console.error("sendNativeMessage failed:", JSON.stringify(error));
+      });
+    return;
+  }
+
+  if (port != null) {
+    port.postMessage(payload);
+  }
+}
+
 // Connect to the native messaging host
 function connectToNativeHost() {
   if (port || connecting) return;
@@ -135,7 +162,10 @@ export function init(apiObj, cfg) {
   NATIVE_HOST_NAME = cfg.nativeHostName;
   browserApi = apiObj;
   detectedBrowser = cfg.browser || "";
-  connectToNativeHost();
+  useSendNativeMessage = cfg.transport === "sendNativeMessage";
+  if (!useSendNativeMessage) {
+    connectToNativeHost();
+  }
 
   // setInterval handles the normal 5-second cadence. The native messaging port
   // keeps the service worker alive while the native host is connected.
@@ -152,7 +182,7 @@ export function init(apiObj, cfg) {
     browserApi.alarms.onAlarm.addListener((alarm) => {
       if (alarm.name === "reportStatus") {
         reportStatus();
-        connectToNativeHost();
+        if (!useSendNativeMessage) connectToNativeHost();
       }
     });
   }
@@ -243,7 +273,5 @@ async function reportStatus() {
     hasPagePerms = status.allowedOnAllSites;
   }
 
-  if (port != null) {
-    port.postMessage({ status: status, browserId: detectedBrowser });
-  }
+  sendToHost({ status: status, browserId: detectedBrowser });
 }

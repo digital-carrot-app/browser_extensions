@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Digital Carrot",
+  "version": "1.3",
+  "description": "Digital Carrot extension for blocking websites and setting website usage goals.",
+  "icons": {
+    "48": "assets/icon-48.png",
+    "96": "assets/icon-96.png"
+  },
+  "permissions": ["nativeMessaging", "declarativeNetRequest", "alarms"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html",
+        "assets/padlock.svg",
+        "assets/logo.svg",
+        "blocked.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
