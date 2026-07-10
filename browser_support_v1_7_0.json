@@ -68,7 +68,8 @@
     },
     "brave": {
       "name": "Brave Browser",
-      "isSupported": false,
+      "supportedVia": "google_chrome",
+      "minAppVersion": "v1.7.0",
       "installDirectories": {
         "windows": ["BraveSoftware\\Brave-Browser\\Application"]
       },
@@ -79,11 +80,21 @@
       "processName": {
         "mac": "brave browser",
         "windows": "brave.exe"
+      },
+      "linkCommands": {
+        "mac": ["open", "-a", "Brave Browser", "<URL>"],
+        "windows": ["<INSTALL_DIR>\\brave.exe", "<URL>"]
+      },
+      "troubleshootingLinks": {
+        "installExtension": "https://www.digitalcarrot.app/docs/browser_extensions/brave_browser/",
+        "fixIncognito": "https://www.digitalcarrot.app/docs/browser_extensions/brave_browser/incognito/",
+        "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/brave_browser/all_pages/"
       }
     },
     "opera": {
       "name": "Opera",
-      "isSupported": false,
+      "supportedVia": "google_chrome",
+      "minAppVersion": "v1.7.0",
       "installDirectories": {
         "windows": ["Opera"]
       },
@@ -94,6 +105,15 @@
       "processName": {
         "mac": "opera",
         "windows": "opera.exe"
+      },
+      "linkCommands": {
+        "mac": ["open", "-a", "Opera", "<URL>"],
+        "windows": ["<INSTALL_DIR>\\opera.exe", "<URL>"]
+      },
+      "troubleshootingLinks": {
+        "installExtension": "https://www.digitalcarrot.app/docs/browser_extensions/opera/",
+        "fixIncognito": "https://www.digitalcarrot.app/docs/browser_extensions/opera/incognito/",
+        "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/opera/all_pages/"
       }
     },
     "apple_safari": {
