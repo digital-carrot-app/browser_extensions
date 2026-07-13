@@ -66,36 +66,6 @@
         "fixPagePerms": "https://www.digitalcarrot.app/docs/browser_extensions/google_chrome/all_pages/"
       }
     },
-    "brave": {
-      "name": "Brave Browser",
-      "isSupported": false,
-      "installDirectories": {
-        "windows": ["BraveSoftware\\Brave-Browser\\Application"]
-      },
-      "executableName": {
-        "mac": "Brave Browser.app",
-        "windows": "brave.exe"
-      },
-      "processName": {
-        "mac": "brave browser",
-        "windows": "brave.exe"
-      }
-    },
-    "opera": {
-      "name": "Opera",
-      "isSupported": false,
-      "installDirectories": {
-        "windows": ["Opera"]
-      },
-      "executableName": {
-        "mac": "Opera.app",
-        "windows": "opera.exe"
-      },
-      "processName": {
-        "mac": "opera",
-        "windows": "opera.exe"
-      }
-    },
     "apple_safari": {
       "name": "Safari",
       "isSupported": false,
